@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style harga.css">
+    <title>Amplang Yulia</title>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Toko Amplang Yulia</h1>
+    </header>
+
+    <section id="products">
+        <div class="product">
+            <img src="amplang1.jpeg" alt="Amplang 1">
+            <h2>Amplang Kuku Macan</h2>
+            <p>Harga: Rp20,000</p>
+            <button class="buy-button" onclick="buyProduct(1)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang2.jpeg" alt="Amplang 2">
+            <h2>Amplang Bumbu</h2>
+            <p>Harga: Rp20,000</p>
+            <button class="buy-button" onclick="buyProduct(2)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang3.jpeg" alt="Amplang 3">
+            <h2>Amplang Kacang</h2>
+            <p>Harga: Rp20,000</p>
+            <button class="buy-button" onclick="buyProduct(3)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang4.jpeg" alt="Amplang 4">
+            <h2>Amplang Stik</h2>
+            <p>Harga: Rp20,000</p>
+            <button class="buy-button" onclick="buyProduct(4)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang5.jpeg" alt="Amplang 5">
+            <h2>Amplang Kapsul</h2>
+            <p>Harga: Rp20,000</p>
+            <button class="buy-button" onclick="buyProduct(5)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang6.jpg" alt="Amplang 5" width="200" height="">
+            <h2>Abon Tuna, Cakalang, Gabus, <br> Udang, Ayam, Daging, Kepiting</h2>
+            <p>Harga: Rp35,000</p>
+            <button class="buy-button" onclick="buyProduct(6)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang7.jpg" alt="Amplang 5" width="250" height="">
+            <h2>Amplang Batu Bara</h2>
+            <p>Harga: Rp25,000</p>
+            <button class="buy-button" onclick="buyProduct(7)">Cek Harga</button>
+        </div>
+        <div class="product">
+            <img src="amplang9.jpg" alt="Amplang 5" width="200">
+            <h2>Keminting</h2>
+            <p>Harga: Rp30,000</p>
+            <button class="buy-button" onclick="buyProduct(8)">Cek Harga</button>
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Harga</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Total Harga: <span id="total-price">Rp0</span></p>
+
+        <div class="container">
+            <h1>Isi Untuk Melakukan Pemesanan</h1> <br>
+            <form id="order-form" action="javascript:void(0);">
+                <div class="form-group">
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="alamat">Alamat:</label>
+                    <input type="text" id="alamat" name="alamat" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="produk">Pilih Produk:</label>
+                    <select id="produk" name="produk">
+                        <option value="Amplang Kuku Macan">Amplang Kuku Macan</option>
+                        <option value="Amplang Bumbu">Amplang Bumbu Spesial</option>
+                        <option value="Amplang Kacang">Amplang Kacang</option>
+                        <option value="Amplang Stik">Amplang Stik</option>
+                        <option value="Amplang Kapsul">Amplang Kapsul</option>
+                        <option value="Amplang Batu Bara">Amplang Batu Bara</option>
+                        <option value="Abon Tuna">Abon Tuna</option>
+                        <option value="Abon Cakalang">Abon Cakalang</option>
+                        <option value="Abon Gabus">Abon Gabus</option>
+                        <option value="Abon Udang">Abon Udang</option>
+                        <option value="Abon Ayam">Abon Ayam</option>
+                        <option value="Abon Daging">Abon Daging</option>
+                        <option value="Abon Kepiting">Abon Kepiting</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="jumlah">Jumlah yang dipesan:</label>
+                    <input type="number" id="jumlah" name="jumlah" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="catatan">Catatan Tambahan:</label>
+                    <textarea id="catatan" name="catatan"></textarea>
+                </div>
+    
+                <button type="button" onclick="sendMessage()">Kirim Pesanan ke WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function sendMessage() {
+            const nama = document.getElementById("nama").value;
+            const alamat = document.getElementById("alamat").value;
+            const produk = document.getElementById("produk").value;
+            const jumlah = document.getElementById("jumlah").value;
+            const catatan = document.getElementById("catatan").value;
+
+            const message = `Saya ingin memesan:%0A%0ANama: ${nama}%0AAlamat: ${alamat}%0AProduk: ${produk}%0AJumlah: ${jumlah}%0ACatatan: ${catatan}`;
+            const whatsappURL = `https://api.whatsapp.com/send?phone=62895385976369&text=${message}`;
+
+            // Mengarahkan pengguna ke WhatsApp dengan pesan yang telah disiapkan
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

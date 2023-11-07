@@ -1,0 +1,61 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for Produk Section */
+.produk-section {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.produk-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.produk-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.produk-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.produk-card p {
+    font-size: 14px;
+}
+.container-fluid{
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgba(229, 207, 207, 0.875);
+}

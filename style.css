@@ -1,0 +1,23 @@
+.navbar-expand-lg{
+    background-color:rgb(212, 44, 44);
+}
+.navbar-toggler{
+    background-color: rgb(212, 44, 44);
+}
+.navbar-brand{
+    color: white;
+}
+.navbar-link{
+    color: white;
+}
+.container-fluid{
+    background-color:rgba(221, 26, 26, 0.767);
+    text-align: left;
+    padding: 10px;
+}
+.card-body{
+    background-color:rgb(242, 231, 71);
+}
+.text{
+    position: center;
+}
